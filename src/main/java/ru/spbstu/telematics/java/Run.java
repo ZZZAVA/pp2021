@@ -10,7 +10,7 @@ public class Run {
         Trolley trolley = new Trolley(controller);
         Pass p1 = new Pass(controller,"f",300); //first, check comment to maxNumber
         Pass p2 = new Pass(controller,"s",900); //second, check comment to maxNumber
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        ExecutorService executorService = Executors.newFixedThreadPool(4);
         executorService.submit(p1);
         executorService.submit(p2);
         executorService.submit(trolley);
