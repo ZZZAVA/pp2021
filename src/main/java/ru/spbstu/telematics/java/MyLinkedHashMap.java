@@ -40,7 +40,7 @@ public class MyLinkedHashMap<K, V> {
     MyNode<K, V> head;
     MyNode<K, V> tail;
 
-    @SuppressWarnings("unchecked") // 消除警告
+
     MyLinkedHashMap() {
         table = (MyNode<K, V>[]) new MyNode[capacity];
         head = null;
@@ -84,6 +84,7 @@ public class MyLinkedHashMap<K, V> {
         int h;
         return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
     }
+
 
     public void removeNode(K key) {
         int h = hash(key);
@@ -180,11 +181,11 @@ public class MyLinkedHashMap<K, V> {
     };
 
 
-    public class LinkedHashIterator implements Iterator<MyLinkedHashMap.MyNode<K, V>>
+    public class LinkedHashMapIterator implements Iterator<MyLinkedHashMap.MyNode<K, V>>
     {
         MyLinkedHashMap.MyNode<K, V> next;
         MyLinkedHashMap.MyNode<K, V> current;
-        LinkedHashIterator() {
+        LinkedHashMapIterator() {
             next = head;
             current = null;
         }
@@ -212,7 +213,7 @@ public class MyLinkedHashMap<K, V> {
         }
     }
     public Iterator<MyLinkedHashMap.MyNode<K, V>> iterator() {
-        return new LinkedHashIterator();
+        return new LinkedHashMapIterator();
     }
 
 }
