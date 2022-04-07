@@ -71,7 +71,7 @@ public class Calc {
     }
 
     static Vector getNextParallel(Vector vectorPrev, Vector x, final Function<Vector, BigDecimal>[] fs, BigDecimal h) throws ExecutionException, InterruptedException {
-        // Вычисляет столбец y_n+1 методом Рунге-Кутты четвертого порядка
+
         BigDecimal bd2 = new BigDecimal(2), bd6 = new BigDecimal(6);
         BigDecimal h2 = h.divide(bd2, SCALE, RoundingMode.HALF_UP);
         Vector xh = Vector.add(x, h), xh2 = Vector.add(x, h2);
